@@ -8,8 +8,8 @@ import ch.endte.syncmatica.communication.ExchangeTarget;
 import ch.endte.syncmatica.communication.PacketType;
 import ch.endte.syncmatica.litematica.LitematicManager;
 import fi.dy.masa.litematica.schematic.placement.SchematicPlacement;
-import net.minecraft.network.PacketByteBuf;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.PacketByteBuf;
 
 import java.io.File;
 import java.io.FileNotFoundException;

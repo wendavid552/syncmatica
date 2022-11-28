@@ -14,7 +14,6 @@ import fi.dy.masa.malilib.gui.widgets.WidgetListBase;
 import fi.dy.masa.malilib.gui.widgets.WidgetSearchBar;
 import fi.dy.masa.malilib.render.RenderUtils;
 import fi.dy.masa.malilib.util.StringUtils;
-import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Collection;
@@ -56,17 +55,16 @@ public class WidgetListSyncmaticaServerPlacement extends WidgetListBase<ServerPl
     }
 
     // source: WidgetFileBrowserBase
-    @Override
-    public void drawContents(final MatrixStack matrixStack, final int mouseX, final int mouseY, final float partialTicks) {
+    public void drawContents(final int mouseX, final int mouseY, final float partialTicks) {
         // Draw an outline around the entire widget
         RenderUtils.drawOutlinedBox(posX, posY, browserWidth, browserHeight, 0xB0000000, GuiBase.COLOR_HORIZONTAL_BAR);
 
-        super.drawContents(matrixStack, mouseX, mouseY, partialTicks);
+        super.drawContents(mouseX, mouseY, partialTicks);
 
-        drawPlacementInfo(getLastSelectedEntry(), matrixStack);
+        drawPlacementInfo(getLastSelectedEntry());
     }
 
-    private void drawPlacementInfo(final ServerPlacement placement, final MatrixStack matrixStack) {
+    private void drawPlacementInfo(final ServerPlacement placement) {
         int x = posX + totalWidth - infoWidth;
         int y = posY;
         final int height = Math.min(infoHeight, parent.getMaxInfoHeight());
@@ -85,35 +83,35 @@ public class WidgetListSyncmaticaServerPlacement extends WidgetListBase<ServerPl
         final int valueColor = 0xFFFFFFFF;
 
         String str = StringUtils.translate("syncmatica.gui.label.placement_info.file_name");
-        drawString(matrixStack, str, x, y, textColor);
+        drawString(str, x, y, textColor);
         y += 12;
-        drawString(matrixStack, placement.getName(), x + 4, y, valueColor);
+        drawString(placement.getName(), x + 4, y, valueColor);
         y += 12;
 
         str = StringUtils.translate("syncmatica.gui.label.placement_info.dimension_id");
-        drawString(matrixStack, str, x, y, textColor);
+        drawString(str, x, y, textColor);
         y += 12;
-        drawString(matrixStack, placement.getDimension(), x + 4, y, valueColor);
+        drawString(placement.getDimension(), x + 4, y, valueColor);
         y += 12;
 
         str = StringUtils.translate("syncmatica.gui.label.placement_info.position");
-        drawString(matrixStack, str, x, y, textColor);
+        drawString(str, x, y, textColor);
         y += 12;
         final BlockPos origin = placement.getPosition();
         final String tmp = String.format("%d %d %d", origin.getX(), origin.getY(), origin.getZ());
-        drawString(matrixStack, tmp, x + 4, y, valueColor);
+        drawString(tmp, x + 4, y, valueColor);
         y += 12;
 
         str = StringUtils.translate("syncmatica.gui.label.placement_info.owner");
-        drawString(matrixStack, str, x, y, textColor);
+        drawString(str, x, y, textColor);
         y += 12;
-        drawString(matrixStack, placement.getOwner().getName(), x + 4, y, valueColor);
+        drawString(placement.getOwner().getName(), x + 4, y, valueColor);
         y += 12;
 
         str = StringUtils.translate("syncmatica.gui.label.placement_info.last_modified");
-        drawString(matrixStack, str, x, y, textColor);
+        drawString(str, x, y, textColor);
         y += 12;
-        drawString(matrixStack, placement.getLastModifiedBy().getName(), x + 4, y, valueColor);
+        drawString(placement.getLastModifiedBy().getName(), x + 4, y, valueColor);
     }
 
     @Override

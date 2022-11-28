@@ -10,8 +10,8 @@ import ch.endte.syncmatica.litematica.ScreenHelper;
 import fi.dy.masa.litematica.schematic.placement.SchematicPlacement;
 import fi.dy.masa.malilib.gui.Message;
 import io.netty.buffer.Unpooled;
-import net.minecraft.network.PacketByteBuf;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.PacketByteBuf;
 
 public class ModifyExchangeClient extends AbstractExchange {
 

@@ -5,8 +5,8 @@ import ch.endte.syncmatica.ServerPlacement;
 import ch.endte.syncmatica.communication.ExchangeTarget;
 import ch.endte.syncmatica.communication.PacketType;
 import io.netty.buffer.Unpooled;
-import net.minecraft.network.PacketByteBuf;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.PacketByteBuf;
 
 import java.io.*;
 

@@ -3,7 +3,7 @@ package ch.endte.syncmatica.communication.exchange;
 import ch.endte.syncmatica.Context;
 import ch.endte.syncmatica.communication.CommunicationManager;
 import ch.endte.syncmatica.communication.ExchangeTarget;
-import net.minecraft.network.PacketByteBuf;
+import net.minecraft.util.PacketByteBuf;
 
 import java.util.UUID;
 

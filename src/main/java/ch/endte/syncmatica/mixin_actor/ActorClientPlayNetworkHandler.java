@@ -10,9 +10,9 @@ import ch.endte.syncmatica.communication.ExchangeTarget;
 import ch.endte.syncmatica.litematica.LitematicManager;
 import ch.endte.syncmatica.litematica.ScreenHelper;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
-import net.minecraft.network.PacketByteBuf;
 import net.minecraft.network.packet.s2c.play.CustomPayloadS2CPacket;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.PacketByteBuf;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 public class ActorClientPlayNetworkHandler {

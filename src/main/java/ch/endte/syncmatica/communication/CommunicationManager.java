@@ -11,10 +11,10 @@ import ch.endte.syncmatica.extended_core.SubRegionData;
 import ch.endte.syncmatica.extended_core.SubRegionPlacementModification;
 import ch.endte.syncmatica.util.SyncmaticaUtil;
 import io.netty.buffer.Unpooled;
-import net.minecraft.network.PacketByteBuf;
 import net.minecraft.util.BlockMirror;
 import net.minecraft.util.BlockRotation;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.PacketByteBuf;
 import net.minecraft.util.math.BlockPos;
 
 import java.io.File;

@@ -12,8 +12,8 @@ import ch.endte.syncmatica.litematica.LitematicManager;
 import ch.endte.syncmatica.litematica.ScreenHelper;
 import ch.endte.syncmatica.mixin_actor.ActorClientPlayNetworkHandler;
 import fi.dy.masa.malilib.gui.Message;
-import net.minecraft.network.PacketByteBuf;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.PacketByteBuf;
 
 import java.util.Collection;
 import java.util.HashSet;

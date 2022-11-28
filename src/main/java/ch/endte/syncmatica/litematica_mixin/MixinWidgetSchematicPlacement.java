@@ -58,7 +58,7 @@ public abstract class MixinWidgetSchematicPlacement extends WidgetListEntryBase<
         final Context con = LitematicManager.getInstance().getActiveContext();
         final boolean buttonEnabled = con != null && con.isStarted() && !LitematicManager.getInstance().isSyncmatic(placement);
         shareButton.setEnabled(buttonEnabled);
-        addButton(shareButton, new ButtonListenerShare(placement, parent.parent));
+        addButton(shareButton, new ButtonListenerShare(placement, parent.getParentGui()));
         buttonsStartX = shareButton.getX() - 1;
     }
 

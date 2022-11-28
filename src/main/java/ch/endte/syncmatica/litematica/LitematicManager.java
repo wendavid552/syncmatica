@@ -67,7 +67,7 @@ public class LitematicManager {
     // 1st case syncmatic placement is present and is now enabled from GUI
     // or another source
     public void renderSyncmatic(final ServerPlacement placement) {
-        final String dimension = MinecraftClient.getInstance().getCameraEntity().getEntityWorld().getRegistryKey().getValue().toString();
+        final String dimension = MinecraftClient.getInstance().getCameraEntity().getEntityWorld().getDimension().getType().toString();
         if (!dimension.equals(placement.getDimension())) {
             ScreenHelper.ifPresent(s -> s.addMessage(Message.MessageType.ERROR, "syncmatica.error.player_dimension_mismatch"));
             context.getSyncmaticManager().updateServerPlacement(placement);
@@ -133,7 +133,7 @@ public class LitematicManager {
 
             final ServerPlacement placement = new ServerPlacement(UUID.randomUUID(), placementFile, owner);
             // thanks miniHUD
-            final String dimension = MinecraftClient.getInstance().getCameraEntity().getEntityWorld().getRegistryKey().getValue().toString();
+            final String dimension = MinecraftClient.getInstance().getCameraEntity().getEntityWorld().getDimension().getType().toString();
             placement.move(dimension, schem.getOrigin(), schem.getRotation(), schem.getMirror());
             transferSubregionDataToServerPlacement(schem, placement);
             return placement;
@@ -338,7 +338,7 @@ public class LitematicManager {
 
     public String getPlayerDimension() {
         if (MinecraftClient.getInstance().getCameraEntity() != null) {
-            return MinecraftClient.getInstance().getCameraEntity().getEntityWorld().getRegistryKey().getValue().toString();
+            return MinecraftClient.getInstance().getCameraEntity().getEntityWorld().getDimension().getType().toString();
         } else {
             return ServerPosition.OVERWORLD_DIMENSION_ID;
         }

@@ -8,14 +8,11 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-
-import java.util.function.Function;
 
 @Mixin(MinecraftServer.class)
 public class MixinMinecraftServer {
-    @Inject(method = "startServer", at = @At("TAIL"))
-    private static <S extends MinecraftServer> void initSyncmatica(final Function<Thread, S> serverFactory, final CallbackInfoReturnable<S> ci) {
+    @Inject(method = "start", at = @At("TAIL"))
+    private <S extends MinecraftServer> void initSyncmatica(CallbackInfo ci) {
         final IFileStorage data = new FileStorage();
         final SyncmaticManager man = new SyncmaticManager();
         final CommunicationManager comms = new ServerCommunicationManager();

@@ -2,8 +2,8 @@ package ch.endte.syncmatica.communication.exchange;
 
 import ch.endte.syncmatica.Context;
 import ch.endte.syncmatica.communication.ExchangeTarget;
-import net.minecraft.network.PacketByteBuf;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.PacketByteBuf;
 
 // an exchange represents a portion of a communication with a specific goal 
 // that stretches across multiple packages

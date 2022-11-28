@@ -8,8 +8,8 @@ import ch.endte.syncmatica.communication.FeatureSet;
 import ch.endte.syncmatica.communication.PacketType;
 import ch.endte.syncmatica.litematica.LitematicManager;
 import io.netty.buffer.Unpooled;
-import net.minecraft.network.PacketByteBuf;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.PacketByteBuf;
 import org.apache.logging.log4j.LogManager;
 
 public class VersionHandshakeClient extends FeatureExchange {

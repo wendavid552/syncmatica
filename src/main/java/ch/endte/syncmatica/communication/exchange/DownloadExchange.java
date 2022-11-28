@@ -7,8 +7,8 @@ import ch.endte.syncmatica.communication.MessageType;
 import ch.endte.syncmatica.communication.PacketType;
 import ch.endte.syncmatica.communication.ServerCommunicationManager;
 import io.netty.buffer.Unpooled;
-import net.minecraft.network.PacketByteBuf;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.PacketByteBuf;
 
 import java.io.File;
 import java.io.FileOutputStream;

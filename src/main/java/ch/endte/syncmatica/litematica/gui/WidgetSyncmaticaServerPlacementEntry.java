@@ -14,8 +14,7 @@ import fi.dy.masa.malilib.gui.widgets.WidgetListEntryBase;
 import fi.dy.masa.malilib.render.RenderUtils;
 import fi.dy.masa.malilib.util.StringUtils;
 import io.netty.buffer.Unpooled;
-import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.network.PacketByteBuf;
+import net.minecraft.util.PacketByteBuf;
 import org.apache.logging.log4j.LogManager;
 
 import java.io.IOException;
@@ -75,8 +74,8 @@ public class WidgetSyncmaticaServerPlacementEntry extends WidgetListEntryBase<Se
         addButton(button, null);
     }
 
-    @Override
-    public void render(final int mouseX, final int mouseY, final boolean selected, final MatrixStack matrixStack) {
+
+    public void render(final int mouseX, final int mouseY, final boolean selected) {
         // Source: WidgetSchematicEntry
         RenderUtils.color(1f, 1f, 1f, 1f);
 
@@ -92,8 +91,8 @@ public class WidgetSyncmaticaServerPlacementEntry extends WidgetListEntryBase<Se
         }
 
         final String schematicName = placement.getName();
-        drawString(x + 20, y + 7, 0xFFFFFFFF, schematicName, matrixStack);
-        drawSubWidgets(mouseX, mouseY, matrixStack);
+        drawString(x + 20, y + 7, 0xFFFFFFFF, schematicName);
+        drawSubWidgets(mouseX, mouseY);
     }
 
     private static class ButtonListener implements IButtonActionListener {
